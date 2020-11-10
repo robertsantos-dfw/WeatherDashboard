@@ -1,0 +1,24 @@
+.clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #eceff1;
+    border-radius: 6px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+    margin: 2%;
+    margin-top: 80px;
+    padding: 20px;
+    width: 46%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}

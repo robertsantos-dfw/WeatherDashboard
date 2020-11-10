@@ -10,54 +10,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<nav class="navbar fixed-top navbar-light bg-light">
-    <a class="navbar-brand center" href="#">Weather Dashboard</a>
+<nav class="navbar fixed-top navbar-light bg-dark">
+    <a class="navbar-brand text-white text-center" href="#">Weather Dashboard</a>
 </nav>
 
 <body>
-    <div class="card" style="width: 25rem;">
-        <div class="card-body">
-            <h5 class="card-title">Search for a City:</h5>
-            <div class="row" class="input">
-                <input type="text" class="inputValue" placeholder="Enter a City">
-                <input type="submit" value="Submit" class="button">
+    <div class="clearfix">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Search for a City:</h5>
+                <div class="row" class="input">
+                    <input type="text" class="inputValue" placeholder="Enter a City">
+                    <input type="submit" value="Submit" class="button">
+                </div>
             </div>
-
+        </div>
+        <div class="card">
             <div class="display">
-                <h1 class="name"></h1>
+                <h1 class="name display-3"></h1>
                 <p class="desc"></p>
                 <p class="temp"></p>
             </div>
         </div>
+    </div>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
-<!-- // function searchforCity(city) {
-    //     var queryURL = (`https://api.openweathermap.org/data/2.5/forecast?q=` + city.value + `&appid=218d741e070c3405fc59e124350e93ca`);
-    //     then(response.JSON())
-    //     then(data => console.log(data))
-
-    //     $.ajax({
-    //         url: queryURL,
-    //         method: "GET"
-    //     }).then(function(response) {
-
-    //         // Printing the entire object to console
-    //         console.log(response);
-
-    //         // Constructing HTML containing the artist information
-    //         var cityName = $("<h1>").text(response.name);
-    //         var cityURL = $("<a>").attr("href", response.url).append(artistName);
-    //         var cityImage = $("<img>").attr("src", response.thumb_url);
-    //         var cityTemp = $("<div>").attr()
-
-    //         // Empty the contents of the artist-div, append the new artist content
-    //         $("#artist-div").empty();
-    //         $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
-    //     });
-    // } -->
 
 
 </html>
