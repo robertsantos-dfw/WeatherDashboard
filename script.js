@@ -30,7 +30,7 @@ function getWeatherInfo() {
         cWind = resp.wind.speed;
         cHumid = resp.main.humidity;
         //setting weather icon for the img src link below
-        let mainData = `<h2>${cName} (${today})<img src="http://openweathermap.org/img/w/${cIcons}.png"></img></h2>
+        let mainData = `<h2>${cName} (${today})<img src="#"></img></h2>
                             <p>Temperature: ${cTemp} °F</p>
                             <p>Humidity: ${cHumid}%</p>
                             <p>Wind Speed: ${cWind} MPH</p>
@@ -72,11 +72,11 @@ function fiveDay() {
 
 function citylist() {
     //clear li elements so theres no repeats
-    $("#searchhistory").empty();
+    $("#history").empty();
     for (let i = 0; i < cities.length; i++) {
         const city = cities[i]
         let cityList = `<li id="list" class="list-group-item list-group-item-action">${city}</li>`
-        $("#searchhistory").prepend(cityList)
+        $("#history").prepend(cityList)
     }
 };
 
@@ -89,7 +89,7 @@ $("#search").on("click", function(event) {
     citylist();
     $("#forecast").empty();
     $("#mainData").empty();
-    cityWeather(cName);
+    getWeatherInfo(cName);
     fiveDay(cName);
     //setting local storage to save users search history.
     localStorage.setItem("cities", JSON.stringify(cities));
