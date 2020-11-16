@@ -11,13 +11,6 @@ localSearchsvd()
 getWeatherInfo()
 fiveDay()
 
-// // search button
-// $(".btn").on("click", function(e) {
-//     e.preventDefault();
-//     let city = inputValue.val();
-//     console.log(inputValue.val())
-//     getWeatherInfo(city);
-// });
 
 function getWeatherInfo() {
 
@@ -37,7 +30,6 @@ function getWeatherInfo() {
         cWind = resp.wind.speed;
         cHumid = resp.main.humidity;
         //setting weather icon for the img src link below
-        cIcons = response.weather[0].icon;
         let mainData = `<h2>${cName} (${today})<img src="http://openweathermap.org/img/w/${cIcons}.png"></img></h2>
                             <p>Temperature: ${cTemp} °F</p>
                             <p>Humidity: ${cHumid}%</p>
@@ -78,7 +70,7 @@ function fiveDay() {
 
 }
 
-function localSearchsvd() {
+function citylist() {
     //clear li elements so theres no repeats
     $("#searchhistory").empty();
     for (let i = 0; i < cities.length; i++) {
@@ -89,12 +81,12 @@ function localSearchsvd() {
 };
 
 //when search button is clicked, the main data and forecast are emptied out to prevent multiples 
-$("#srchbtn").on("click", function(event) {
+$("#search").on("click", function(event) {
     event.preventDefault();
     cName = $("#city").val();
     cities.push(cName)
 
-    buildList();
+    citylist();
     $("#forecast").empty();
     $("#mainData").empty();
     cityWeather(cName);
@@ -104,7 +96,7 @@ $("#srchbtn").on("click", function(event) {
 
 });
 
-function init() {
+function localSearchsvd() {
     //local storage set up 
     let citiesSaved = JSON.parse(localStorage.getItem("cities"));
     //if nothing has be saved yet, use origial cities array otherwise use citiesSaved array
@@ -112,16 +104,16 @@ function init() {
         cities = citiesSaved;
     }
     // Render search history
-    buildList();
+    citylist();
 }
 //so user can pull a city they have already searched for without typing.
 $("li").on('click', function(event) {
     event.preventDefault();
     let histSearch = $(this).closest("#list").text()
     console.log(histSearch)
-    cityName = histSearch
+    cName = histSearch
     $("#forecast").empty();
     $("#mainData").empty();
-    cityWeather(cityName);
-    fiveDay(cityName);
+    cityWeather(cName);
+    fiveDay(cName);
 })

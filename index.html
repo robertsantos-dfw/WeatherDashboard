@@ -11,47 +11,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<nav class="navbar fixed-top navbar-light bg-dark">
-    <a class="navbar-brand text-white justify-content-center" href="#">Weather Dashboard</a>
-</nav>
 
 <body>
-    <div class="clearfix">
-        <div class="card col-4">
-            <div class="card-body">
-                <h5 class="card-title">Search for a City:</h5>
-                <div class="row" class="input">
-                    <input type="text" class="city" placeholder="Enter a City">
-                    <button type="submit" value="Submit" class="srchbtn">Search</button>
-                </div>
-                <div class="row p-2">
-                    <div class="col-3">
-                        <ul id="searchhistory" class="list-group py-2">
+    <nav class="navbar navbar-dark bg-dark text-light">
+        <a class="navbar-brand text-white text-center" href="#">Weather Dashboard</a>
+    </nav>
 
-                        </ul>
+    <form class="form-inline  p-3">
+        <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button id="search" class="btn btn-primary my-2 my-sm-0">Search</button>
+    </form>
+    <div class="row p-2">
+        <div class="col-3">
+            <ul id="history" class="list-group py-2">
 
-                    </div>
-                </div>
-                <div class="jumbotron border p-2">
-                    <div id="mainData" class="col-8">
+            </ul>
 
-                    </div>
-                    <div id="forecast" class="row justify-content-around p-2">
-                    </div>
+        </div>
+        <div class="jumbotron border p-2">
+            <div id="mainData" class="col-8">
 
-                </div>
+            </div>
+            <div id="forecast" class="row justify-content-around p-2">
+
+
             </div>
         </div>
-
-    </div>
-    </div>
     </div>
 
-</body>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
-<script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="script.js"></script>
 
 
 </html>
